@@ -69,16 +69,16 @@ export default {
       beachesFilter: [],
       estados: [
         "AL",
-        "BA",
-        "SP",
-        "RJ",
-        "PE",
-        "PB",
-        "RN",
-        "PI",
-        "CE",
         "AM",
-        "SC"
+        "BA",
+        "CE",
+        "PB",
+        "PE",
+        "PI",
+        "RJ",
+        "RN",
+        "SC",
+        "SP"
       ]
     };
   },
