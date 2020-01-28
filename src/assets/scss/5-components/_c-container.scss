@@ -1,0 +1,38 @@
+/* 
+    Grid based in Materialize https://materializecss.com/grid.html
+ */
+.c-container {
+  margin: 0 auto;
+  max-width: rem(1280);
+  width: 90%;
+
+  &.above {
+    margin-top: rem(-60);
+  }
+
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  .grid-6 {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .c-container {
+    width: 70%;
+  }
+}
+@media only screen and (min-width: 601px) {
+  .c-container {
+    width: 85%;
+  }
+}
+
+#container-main {
+  margin-top: 50px;
+  opacity: 0;
+}

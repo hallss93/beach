@@ -1,0 +1,10 @@
+.o-img {
+  height: rem(250);
+  &.full {
+    width: 100%;
+  }
+
+  &.height-auto {
+    height: auto;
+  }
+}

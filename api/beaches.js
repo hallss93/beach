@@ -1,13 +1,13 @@
 import api from './index'
 
 const url = {
-    beachs: 'https://api.myjson.com/bins/atb5y'
+    beaches: 'https://api.myjson.com/bins/8z3oe'
 }
 
 export default {
-    getBeachs: async () => {
+    getBeaches: async () => {
         try {
-            const response = await api.get(url.beachs)
+            const response = await api.get(url.beaches)
             return response
         } catch (error) {
             return error

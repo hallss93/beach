@@ -6,6 +6,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 100% 100%;
+  display: none;
+
+  &.show {
+    display: block;
+  }
+
   img {
     margin-top: rem(-100);
     width: 100%;
