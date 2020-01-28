@@ -1,7 +1,7 @@
 import api from './index'
 
 const url = {
-    beaches: 'https://api.myjson.com/bins/gpy9a'
+    beaches: 'https://us-central1-beach-e84a5.cloudfunctions.net/beaches'
 }
 
 export default {

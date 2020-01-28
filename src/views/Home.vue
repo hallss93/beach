@@ -7,7 +7,7 @@
         <h1 class="o-text gigant bold center pb-20">Listagem das Praias</h1>
 
         <div class="flex">
-          <div class="grid-6 mb-10">
+          <div class="grid-6 mb-10 mt-10">
             <multiselect
               placeholder="Filtre por Estado"
               selectLabel="Pressione Enter para Selecionar"
@@ -16,7 +16,16 @@
               :options="estados"
             ></multiselect>
           </div>
-          <div class="grid-6"></div>
+          <div class="grid-6">
+            <div class="pr-10 pb-10 pl-10">
+              <input
+                type="text"
+                v-model="search"
+                placeholder="Pesquise uma Praia"
+                class="form"
+              />
+            </div>
+          </div>
           <div
             class="grid-6 mb-10"
             v-for="(i, index) in beachesFilter"
@@ -55,6 +64,7 @@ export default {
   data() {
     return {
       interval: null,
+      search: "",
       estado: null,
       beachesFilter: [],
       estados: [
@@ -81,6 +91,15 @@ export default {
       this.beachesFilter = a
         ? this.beaches.filter(e => e.uf.indexOf(a) >= 0)
         : this.beaches;
+    },
+    search(a) {
+      if (a.trim() == "") {
+        this.estado = null;
+        this.beachesFilter = this.beaches;
+      } else
+        this.beachesFilter = this.beaches.filter(
+          e => e.name.toLocaleLowerCase().indexOf(a.toLocaleLowerCase()) >= 0
+        );
     }
   },
   computed: {
