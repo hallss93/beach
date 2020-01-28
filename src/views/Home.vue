@@ -7,9 +7,19 @@
         <h1 class="o-text gigant bold center pb-20">Listagem das Praias</h1>
 
         <div class="flex">
+          <div class="grid-6 mb-10">
+            <multiselect
+              placeholder="Filtre por Estado"
+              selectLabel="Pressione Enter para Selecionar"
+              deselectLabel="Pressione Enter para Remover"
+              v-model="estado"
+              :options="estados"
+            ></multiselect>
+          </div>
+          <div class="grid-6"></div>
           <div
-            class="grid-6"
-            v-for="(i, index) in beaches"
+            class="grid-6 mb-10"
+            v-for="(i, index) in beachesFilter"
             :key="`card-beach-${index}`"
           >
             <div
@@ -33,6 +43,7 @@
 import Navbar from "@/components/Navbar.vue";
 import Subnav from "@/components/Subnav.vue";
 import Container from "@/components/Container.vue";
+import Multiselect from "vue-multiselect";
 
 import beaches from "./../../api/beaches";
 import mixinContainer from "@/mixins/mixin-container.js";
@@ -43,10 +54,35 @@ export default {
   name: "home",
   data() {
     return {
-      interval: null
+      interval: null,
+      estado: null,
+      beachesFilter: [],
+      estados: [
+        "AL",
+        "BA",
+        "SP",
+        "RJ",
+        "PE",
+        "PB",
+        "RN",
+        "PI",
+        "CE",
+        "AM",
+        "SC"
+      ]
     };
   },
-  components: { Navbar, Subnav, Container },
+  components: { Multiselect, Navbar, Subnav, Container },
+  watch: {
+    beaches(b) {
+      this.beachesFilter = b;
+    },
+    estado(a) {
+      this.beachesFilter = a
+        ? this.beaches.filter(e => e.uf.indexOf(a) >= 0)
+        : this.beaches;
+    }
+  },
   computed: {
     ...mapState(["beaches"])
   },
@@ -95,3 +131,4 @@ export default {
   }
 };
 </script>
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>

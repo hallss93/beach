@@ -1,7 +1,7 @@
 import api from './index'
 
 const url = {
-    beaches: 'https://api.myjson.com/bins/8z3oe'
+    beaches: 'https://api.myjson.com/bins/gpy9a'
 }
 
 export default {
