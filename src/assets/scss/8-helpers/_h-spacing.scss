@@ -1,6 +1,6 @@
 $x: 0;
 
-@while $x < 55 {
+@while $x < 200 {
   .m-#{$x} {
     margin: #{$x}px;
   }
@@ -21,7 +21,7 @@ $x: 0;
 
 $y: 0;
 
-@while $y < 55 {
+@while $y < 200 {
   .p-#{$y} {
     padding: #{$y}px;
   }

@@ -6,6 +6,7 @@
 @import "1-tools/t-rem";
 
 // Animations
+@import "2-animations/c.gallery";
 
 // Base
 @import "3-base/b-defaults";
@@ -13,6 +14,8 @@
 // Objects
 
 // Components
+@import "5-components/c-gallery";
+@import "5-components/c-navbar";
 
 // Sections
 
